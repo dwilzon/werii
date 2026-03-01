@@ -1,5 +1,19 @@
 # WeriiHQ Repository Structure
 
+## Current Status (Mar 1, 2026)
+
+### Implemented
+
+- `dwilzon/werii` initialized and pushed.
+- `dwilzon/web` bootstrapped with Next.js + TypeScript + Tailwind.
+- `dwilzon/web` includes `.copilot/instructions.md` and a minimal Qordi landing page.
+- Locked planning decisions saved in `LOCKED_DECISIONS_MAR_1_2026.md`.
+
+### Planned Target
+
+The repo layout below remains the target architecture for the full WeriiHQ system.
+Treat this document as the design blueprint while implementation catches up.
+
 ## GitHub Organization
 
 ```
