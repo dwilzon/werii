@@ -9,6 +9,53 @@
 
 ---
 
+## Current Status (Mar 1, 2026)
+
+- `web` baseline is live in repo (Next.js + TypeScript + Tailwind).
+- Minimal Qordi landing is implemented.
+- Planning baseline is locked:
+  - `LOCKED_DECISIONS_MAR_1_2026.md`
+  - `SYSTEM_ARCHITECTURE.md`
+  - `REPO_STRUCTURE.md`
+
+This roadmap remains valid, but execution now follows a strict order:
+
+1. **Ship the smallest working product loop first** (capture -> insight -> action)
+2. **Validate with real users**
+3. **Only then expand features and revenue streams**
+
+---
+
+## Execution Priority (Next 14 Days)
+
+### Priority 1: Working Loop (Must Have)
+
+- Landing -> waitlist submit confirmation
+- One ingest path (voice or text)
+- One insight returned
+- One actionable guidance item shown
+
+### Priority 2: Validation (Must Have)
+
+- 10 real users test the loop
+- Capture friction + desired outcomes
+- Keep/kill decisions logged
+
+### Priority 3: Hardening (Should Have)
+
+- Basic analytics events
+- Error states and retries in UI
+- Baseline data schema and endpoint contracts
+
+### Deferred Until After Validation
+
+- Merch, advanced animations, multi-channel growth automation
+- Additional integrations beyond MVP loop
+
+These are not removed—just intentionally delayed until the core loop proves traction.
+
+---
+
 ## Week 1: Foundation & Validation
 
 **Goal:** Prove the core loop works (voice → insight)
