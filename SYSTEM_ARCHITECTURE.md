@@ -1,5 +1,17 @@
 # WeriiHQ System Architecture
 
+## Current Implementation Snapshot (Mar 1, 2026)
+
+- `dwilzon/werii` is active and serving as planning/source-of-truth.
+- `dwilzon/web` is bootstrapped (Next.js + TypeScript + Tailwind).
+- `dwilzon/web` has:
+   - minimal Qordi landing page
+   - `.copilot/instructions.md`
+   - passing lint baseline
+- Locked decisions are captured in `LOCKED_DECISIONS_MAR_1_2026.md`.
+
+This document is the architecture + execution reference for moving from current baseline to MVP.
+
 ## Overview
 
 WeriiHQ is a personal AI operating system + products ecosystem built around three interconnected layers:
@@ -217,7 +229,7 @@ Loop repeats
 
 - **Clean separation**: Your tool vs. customer product
 - **Faster to market**: Don't need to package OpenClaw for users
-- **Easier operations**: One VPS for OpenClaw, separate hosting for Qordi
+- **Easier operations**: Hostinger-first path with minimal moving parts
 - **Scalable**: Can add OpenClaw features to Qordi later if needed
 
 ---
@@ -249,9 +261,10 @@ Loop repeats
 - Full control over environment
 - AlexFinn YouTube tutorials available
 
-**Hosting: Hotinger (initial) → Vercel or self-hosted (later)**
-- Keep everything on same VPS initially
-- Scale frontend separately if needed
+**Hosting: Hostinger-first execution**
+- Keep initial deployment simple and centralized.
+- Defer platform changes until user traction requires it.
+- Prioritize speed-to-feedback over infra sophistication.
 
 ---
 
@@ -274,10 +287,10 @@ Loop repeats
 ## Roadmap
 
 ### Week 1-2: MVP
-- OpenClaw setup on VPS
-- Qordi landing page (waitlist)
-- Voice ingest test
-- 10 beta users validating
+- OpenClaw setup on VPS (personal engine)
+- Qordi landing page live (waitlist capture)
+- Voice ingest test path working end-to-end
+- 10 beta users validating direction
 
 ### Week 3-4: v1 Features
 - Predictive guidance
@@ -299,6 +312,56 @@ Loop repeats
 - Kill experiments that don't convert
 - Build next revenue stream
 - Scale Qordi or launch new app
+
+---
+
+## Execution Blueprint (Next 14 Days)
+
+### Track A: Product Surface (`web`)
+
+1. Replace waitlist form stub with real submit handler.
+2. Add one simple "voice ingest" UI flow (record/upload -> success state).
+3. Add one "ask my brain" placeholder flow with mocked response.
+4. Add analytics events for landing CTA + submit success.
+
+### Track B: Data + Backend Path (API/Supabase)
+
+1. Define minimal schema for:
+   - users
+   - ideas
+   - insights
+   - guidance_items
+2. Implement one ingest endpoint contract.
+3. Implement one query endpoint contract.
+4. Wire endpoints to frontend with explicit error states.
+
+### Track C: OpenClaw Personal Loop
+
+1. Bring up OpenClaw on Hostinger VPS.
+2. Enable one inbound channel first (single-channel start).
+3. Add one custom skill: idea capture normalization.
+4. Export structured outputs usable by the Qordi stack.
+
+### Track D: Validation
+
+1. Recruit first 10 users.
+2. Run one structured feedback loop:
+   - capture pain point
+   - capture desired output
+   - capture whether user would return
+3. Decide keep/kill for each feature based on usage evidence.
+
+---
+
+## Definition of Done (MVP Gate)
+
+MVP is considered complete when all are true:
+
+1. A user can land, join waitlist, and get confirmation.
+2. A user can submit one voice/text idea and receive one generated insight.
+3. Daily guidance feed returns at least one actionable item.
+4. Foundational metrics are visible (signup, submit, return activity).
+5. At least 10 real users have tested and feedback is documented.
 
 ---
 
@@ -330,5 +393,5 @@ Loop repeats
 - ✅ Tech stack locked
 - ✅ Roadmap locked
 - 🔲 OpenClaw VPS setup (in progress)
-- 🔲 Qordi MVP build (starting Week 1)
-- 🔲 First users onboarded (Week 2)
+- 🔲 Qordi MVP build (active)
+- 🔲 First users onboarded (target: Week 2)
