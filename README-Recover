@@ -1,0 +1,35 @@
+Quick Checklist for Each Repo
+When you create a repo, GitHub will ask:
+
+Repository name: (e.g., web, core, infra, docs)
+
+Description: Use these:
+
+web: "Next.js frontend for Qordi (voice-to-insight companion)"
+core: "Shared business logic (skills, models, utilities)"
+infra: "OpenClaw VPS setup, Docker configs, deployment"
+docs: "Architecture, decisions, roadmap, specifications"
+Public or Private?: Choose Public (builds credibility, easier to share)
+
+Add .gitignore: Select Node (since you're using Node)
+
+Add README.md: Check the box ✅
+
+Create repository
+
+After You Create weriihq/web
+Once the repo is created, pause here and let me know. I'll:
+
+Create the Next.js folder structure for you
+Add starter code (landing page + voice ingest UI)
+Add .copilot/instructions.md
+Add the initial files you need to start building
+Then you can:
+
+Clone it locally or open it in Codespaces
+Start building from there
+Timeline
+Create repos: 5 mins per repo (do all 4: web, core, infra, docs)
+Populate repos: I handle (30 mins total)
+Start building: You're ready to code
+Go ahead and create weriihq/web now—let me know when it's done.
